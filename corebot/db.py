@@ -12,6 +12,7 @@ class MongoCore:
         self.db = self.mongo_client[os.environ.get('MONGO_DB_NAME')]
         self.user_list_collection = self.db['userlist']
         self.congressperson_collection = self.db['congressperson']
+        self.congressperson_collection.find()
 
     def insert_user(self, user_id):
         key = {
