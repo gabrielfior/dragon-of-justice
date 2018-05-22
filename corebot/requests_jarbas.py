@@ -14,6 +14,7 @@ class Requester:
     def __init__(self, db=None):
 
         self.HOST = os.environ.get("JARBAS_HOST")
+        self.HOST = "https://jarbas.serenata.ai/api/chamber_of_deputies/reimbursement/"
         self.mongo = db if db else MongoCore()
 
     def find_names(self, name):

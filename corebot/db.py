@@ -5,14 +5,15 @@ from pymongo import MongoClient
 
 class MongoCore:
     def __init__(self):
-        self.mongo_client = MongoClient(
-            os.environ.get("MONGO_URI"), int(os.environ.get("MONGO_PORT"))
-        )
+        #self.mongo_client = MongoClient(
+        #    os.environ.get("MONGO_URI"), int(os.environ.get("MONGO_PORT"))
+        #)
 
-        self.db = self.mongo_client[os.environ.get('MONGO_DB_NAME')]
+        #self.db = self.mongo_client[os.environ.get('MONGO_DB_NAME')]
+        self.db = {'userlist':None, 'congressperson':None, 'suspicious':None}
         self.user_list_collection = self.db['userlist']
         self.congressperson_collection = self.db['congressperson']
-        self.congressperson_collection.find()
+        self.suspicious_collection = self.db['suspicious']
 
     def insert_user(self, user_id):
         key = {
